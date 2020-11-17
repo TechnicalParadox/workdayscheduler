@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
+      integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link
@@ -29,10 +35,34 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- TODO Timeblocks go here -->
+      <hr>
+      <div class="time-block row justify-content-around" id="0900">
+        <div class="time col-1 text-right">
+          0900
+        </div>
+        <div class="description col-10 past">
+          Blah blah blah
+        </div>
+        <div class="btn-save col-1 bg-info text-center saveBtn">
+          <i class="fas fa-save fa-lg"></i>
+        </div>
+      </div>
+      <div class="time-block row justify-content-around" id="1000">
+        <div class="time col-1 text-right">
+          1000
+        </div>
+        <div class="description col-10 past">
+          Blah blah blah
+        </div>
+        <div class="btn-save col-1 bg-info text-center saveBtn">
+          <i class="fas fa-save fa-lg"></i>
+        </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

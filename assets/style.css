@@ -23,11 +23,13 @@ textarea{
 
 .description{
   white-space: pre-wrap;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .time-block{
-  text-align: center;
   border-radius: 15px;
+  padding: 0;
 }
 
 .row {
@@ -44,7 +46,7 @@ textarea{
 
 .past {
   background-color: #d3d3d3;
-  color: white;
+  color: #000000;
 }
 
 .present {
@@ -57,6 +59,8 @@ textarea{
   color: white;
 }
 
+/** TODO Use these */
+
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -68,4 +72,11 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.time {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  padding-right: 5px;
 }
