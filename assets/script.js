@@ -41,6 +41,7 @@ function loadDescs()
     let tb = $("#"+fh);
     let desc = tb.children(".description");
 
+    desc.empty();
     desc.append($("<p>").html(localStorage.getItem(fh)));
   }
 }
