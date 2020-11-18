@@ -25,6 +25,7 @@ textarea{
   white-space: pre-wrap;
   border-left: 1px solid black;
   border-right: 1px solid black;
+  padding: 10px;
 }
 
 .time-block{
@@ -59,8 +60,6 @@ textarea{
   color: white;
 }
 
-/** TODO Use these */
-
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -78,5 +77,5 @@ textarea{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
-  padding-right: 5px;
+  padding: 10px;
 }
