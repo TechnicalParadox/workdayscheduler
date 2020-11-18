@@ -41,14 +41,24 @@ function loadDescs()
     let tb = $("#"+fh);
     let desc = tb.children(".description");
 
-    //desc.html(localStorage.getItem(fh));
-    desc.append($("<p>").html(localStorage.getItem(fh)).addClass("padding-1"));
+    desc.append($("<p>").html(localStorage.getItem(fh)));
   }
 }
 
-loadDescs();
-
 function saveDescs()
 {
+  for (let t = 0900; t <= 1700; t+=100)
+  {
+    let fh = t.toString().padStart(4, "0")
+    let tb = $("#"+fh);
+    let desc = tb.children(".description").children("p").html();
 
+    localStorage.setItem(fh, desc);
+  }
 }
+
+// TODO: Save button on click
+
+// TODO: description on click
+
+loadDescs();
