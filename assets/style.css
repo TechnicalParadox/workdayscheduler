@@ -68,6 +68,10 @@ textarea{
   color: white;
 }
 
+.saveBtn i {
+  width: 100%;
+}
+
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
