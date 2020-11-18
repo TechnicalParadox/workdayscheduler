@@ -33,6 +33,7 @@ function colorSchedule(mt)
   }
 }
 
+/** Loads all event descriptions from localStorage */
 function loadDescs()
 {
   for (let t = 0900; t <= 1700; t+=100)
@@ -42,24 +43,43 @@ function loadDescs()
     let desc = tb.children(".description");
 
     desc.empty();
-    desc.append($("<p>").html(localStorage.getItem(fh)));
+    desc.append($("<p>").addClass("h-100 w-100").html(localStorage.getItem(fh)));
   }
 }
 
-function saveDescs()
+/**
+ * Save the description of the event with the passed ID
+ * @param  {[type]} id the ID of the event to save
+ */
+function saveDesc(id)
 {
-  for (let t = 0900; t <= 1700; t+=100)
-  {
-    let fh = t.toString().padStart(4, "0")
-    let tb = $("#"+fh);
-    let desc = tb.children(".description").children("p").html();
+  let tb = $("#"+id);
+  let desc = tb.children(".description").children("p").html();
 
-    localStorage.setItem(fh, desc);
-  }
+  localStorage.setItem(id, desc);
 }
 
-// TODO: Save button on click
+/** Saves event description on click of save button */
+$(".saveBtn").click(function()
+{
+  let id = $(this).parent().attr('id');
+  saveDesc(id);
+});
 
-// TODO: description on click
+$(".description").on("click", "p", function()
+{
+  let desc = $(this).html();
+  let ta = $("<textarea>").addClass("h-100 w-100").val(desc);
+  $(this).parent().append(ta);
+  $(this).remove();
+  ta.trigger("focus");
+});
 
-loadDescs();
+$(".description").on("blur", "textarea", function()
+{
+  let desc = $(this).val();
+  $(this).parent().append($("<p>").addClass("h-100 w-100").html(desc));
+  $(this).remove();
+});
+
+loadDescs(); // load event descriptions
