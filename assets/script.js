@@ -6,11 +6,18 @@ function updateHour()
   hour = moment().hour(); // Get current local hour
   let mt = (hour.toString().padStart(2,"0")).toString().padEnd(4,"0"); // format hour to military time
   colorSchedule(mt); // Call colorSchedule with current formatted hour
+  updateDay();
   setTimeout(function(){updateHour;},(60-moment().minutes())*60*1000); // Set timeout for next hour update
 }
 
 updateHour();
 // End Time Tracking
+
+/** Updates the currentDay <p> with the current day */
+function updateDay()
+{
+  $("#currentDay").html(moment().format("dddd, MMMM Do "));
+}
 
 /** Sets the background color of all the timeblock descriptions */
 function colorSchedule(mt)
